@@ -14,7 +14,7 @@ function openNotification(
 ) {
   setLoading(true);
   const { getGraphqlClient } = config;
-
+  console.log(gql,"gql-gql")
   getGraphqlClient()
     .query({
       query: gql`

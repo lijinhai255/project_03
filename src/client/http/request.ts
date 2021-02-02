@@ -9,11 +9,11 @@ interface Ipvs {
   pvs: number;
 }
 
-const { getGraphqlClient } = config;
+const { getGraphqlClient, getCssDataUrl } = config;
 
 export function requestData(year: string, callback: (...args: any[]) => void): void {
   const yearParam = year === 'home' ? '0' : year;
-
+  console.log(gql, "gql-gql")
   getGraphqlClient()
     .query<IallHouses>({
       query: gql`
@@ -33,6 +33,31 @@ export function requestData(year: string, callback: (...args: any[]) => void): v
     .then(result => {
       callback(result.data.allHouses);
     });
+}
+
+export function getCssData(callback: (...args: any[]) => void): void {
+  // getGraphqlClient()
+  console.log("getCssDatagetCssDatagetCssDatagetCssData")
+  // getCssDataUrl()
+  //   .query<IallHouses>({
+  //     query: gql`
+  //     {
+  //       AllCss(label: CSS {
+  //         _id
+  //         area
+  //         name
+  //         number
+  //         beginTime
+  //         endTime
+  //         status
+  //       }
+  //     }
+  //   `
+  //   })
+  //   .then(result => {
+  //     callback(result)
+  //   })
+  // .query()
 }
 
 export function requestPvs(callback: (...args: any[]) => void): void {

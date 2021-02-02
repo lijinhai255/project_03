@@ -72,62 +72,8 @@ const Home: React.FunctionComponent<RouteComponentProps> = () => {
 
   return (
     <Content className="content">
-      <div className="content-section">
-        <CurrentHouse />
-      </div>
-
-      <div className="content-statistic-card">
-        <StatisticCard />
-      </div>
-      <div className="home-content-houses">
-        <Tabs>
-          <TabPane tab={constants.HOUSE_NUMBER} key="1">
-            <Row>
-              <Col span={18}>
-                <BasicAreaGraph
-                  data={houseData}
-                  title={constants.HOUSE_NUMBER}
-                />
-              </Col>
-              <Col span={6}>
-                <Rank data={houseRankData} title="月份" unit="套" />
-              </Col>
-            </Row>
-            <hr />
-            <BasicColumnGraph
-              title="房源 / 区域(统计图)"
-              data={chartHouseData}
-              xAxis={constants.AREA}
-              yAxis={constants.HOUSE_NUMBER}
-              desc
-            />
-          </TabPane>
-          <TabPane tab={constants.BUILDER_NUMBER} key="2">
-            <Row>
-              <Col span={18}>
-                <BasicAreaGraph
-                  data={builderData}
-                  title={constants.BUILDER_NUMBER}
-                />
-              </Col>
-              <Col span={6}>
-                <Rank data={builderRankData} title="月份" unit="个" />
-              </Col>
-            </Row>
-            <hr />
-            <BasicColumnGraph
-              title="楼盘数 / 区域(统计图)"
-              data={chartBuilderData}
-              xAxis={constants.AREA}
-              yAxis={constants.BUILDER_NUMBER}
-              desc
-            />
-          </TabPane>
-        </Tabs>
-      </div>
-      <div className="content-section">
-        <WholeTable />
-      </div>
+      <div>这是首页</div>
+     
     </Content>
   );
 };

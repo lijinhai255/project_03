@@ -2,12 +2,12 @@ const gulp = require('gulp');
 const babel = require('gulp-babel');
 
 gulp.task('build:graphql', () =>
-  gulp.src('./src/nodeuii/**/*.graphql').pipe(gulp.dest('./dist/'))
+  gulp.src('./src/serve/**/*.graphql').pipe(gulp.dest('./dist/'))
 );
 
 gulp.task('build:ts', () =>
   gulp
-    .src('./src/nodeuii/**/*.ts')
+    .src('./src/serve/**/*.ts')
     .pipe(
       // 使用 .babelrc 配置
       babel()
@@ -19,5 +19,5 @@ gulp.task('build:ts', () =>
 gulp.task("default", gulp.series("build:graphql", "build:ts"));
 
 if (process.env.NODE_ENV !== 'production') {
-  gulp.watch('./src/nodeuii/**/*.ts', gulp.series('default'));
+  gulp.watch('./src/serve/**/*.ts', gulp.series('default'));
 }

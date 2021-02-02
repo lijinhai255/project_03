@@ -9,7 +9,7 @@ import { RouteComponentProps } from 'react-router';
 import { withRouter } from 'react-router-dom';
 import Notice from '../Notice';
 import { tabKeyRouterMap, GITHUB_URL } from '../../constants';
-import { requestPvs, requestData } from '../../utils/request';
+import { requestPvs, requestData ,getCssData} from '../../http/request';
 import { AppContext } from '../../context/appContext';
 import './styles.less';
 
@@ -26,6 +26,7 @@ const Header: React.FunctionComponent<RouteComponentProps> = ({
   const [pvs, changePvs] = useState(0);
 
   const selectedYear = tabKeyRouterMap[location.pathname];
+  console.log(selectedYear,"selectedYear-selectedYear")
 
   const requestDataWrapper = (year: string) => {
     appState.changeLoading(true);
@@ -52,7 +53,14 @@ const Header: React.FunctionComponent<RouteComponentProps> = ({
   const clickMenu = ({ key }: { key: string }) => {
     if (key !== selectedYear) {
       history.push(tabKeyRouterMap[key]);
-      requestDataWrapper(key);
+      // requestDataWrapper(key);
+      // 获取CSS 数据 
+      console.log(1212)
+      getCssData((getCssData: cdFang.IhouseData[]) => {
+        appState.changeData(getCssData);
+        appState.changeLoading(false);
+      })
+
     }
   };
 
@@ -74,21 +82,21 @@ const Header: React.FunctionComponent<RouteComponentProps> = ({
           <HomeOutlined />
           首页
         </Menu.Item>
-        <Menu.Item key="2020">
+        <Menu.Item key="CSS">
           <CalendarOutlined />
-          2020年
+          获取CSS数据
         </Menu.Item>
-        <Menu.Item key="2019">
+        <Menu.Item key="JS">
           <CalendarOutlined />
-          2019年
+          获取JS数据
         </Menu.Item>
-        <Menu.Item key="2018">
+        <Menu.Item key="Webpacke">
           <CalendarOutlined />
-          2018年
+          获取Webpack数据
         </Menu.Item>
-        <Menu.Item key="2017">
+        <Menu.Item key="React">
           <CalendarOutlined />
-          2017年
+          获取React数据
         </Menu.Item>
       </Menu>
     </div>

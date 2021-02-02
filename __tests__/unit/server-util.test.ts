@@ -1,5 +1,5 @@
 /* eslint-disable no-undefined */
-import * as util from '../../src/nodeuii/utils';
+import * as util from '../../src/serve/utils';
 
 const mockArray = [
   [

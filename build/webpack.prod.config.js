@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin')
 const { merge } = require('webpack-merge');
 const QiniuUploadPlugin = require('qiniu-upload-plugin');
-const qiniuConfig = require('./qiniu.config');
+// const qiniuConfig = require('./qiniu.config');
 const baseConfig = require('./webpack.base.config');
 
 const prodConfig = {

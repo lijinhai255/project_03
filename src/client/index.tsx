@@ -8,7 +8,7 @@ import Routes from './router';
 
 const { lazy, Suspense } = React;
 
-const App = lazy(() => import('./containers/App/index'));
+const App = lazy(() => import('./page/App/'));
 
 ReactDOM.render(
   <Suspense fallback={<Loading height="100vh" tip={LOADING_TIP} />}>

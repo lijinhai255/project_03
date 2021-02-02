@@ -4,7 +4,7 @@ import Header from '../../components/Header';
 
 import { COPYRIGHT, BEIAN_ICP } from '../../constants';
 
-import './styles.less';
+import './style.less';
 
 const App: React.FunctionComponent = ({ children }) => (
   <div>
@@ -15,12 +15,12 @@ const App: React.FunctionComponent = ({ children }) => (
       </Layout.Header>
       {children}
       <Layout.Footer style={{ textAlign: 'center' }}>
-        <div>
+        {/* <div>
           <a href="http://www.beian.miit.gov.cn/" target="blank">
             {BEIAN_ICP}
           </a>
         </div>
-        <div>{COPYRIGHT}</div>
+        <div>{COPYRIGHT}</div> */}
       </Layout.Footer>
     </Layout>
   </div>

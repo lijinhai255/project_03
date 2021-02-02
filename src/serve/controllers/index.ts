@@ -60,7 +60,14 @@ router
     const file = fs.readFileSync(path.join('client/index.html'));
     ctx.set('Content-Type', 'text/html; charset=utf-8');
     ctx.body = file;
-  });
+  })
+  .get(
+    "/cssData",
+    async (ctx)=>{
+      ctx.body=JSON.stringify({data:"ok"})
+    }
+    )
+
 
 export default {
   init(app: Koa): void {
