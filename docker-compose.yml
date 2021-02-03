@@ -9,7 +9,9 @@ services:
     networks:
       - webapp-network
   web:
-    image: web_test
+    build:
+      context: .
+      dockerfile: Dockerfile
     restart: always
     depends_on:
       - database
@@ -17,7 +19,6 @@ services:
       - 8181:8181
     networks:
       - webapp-network
-
 networks:
   webapp-network:
     driver: bridge
