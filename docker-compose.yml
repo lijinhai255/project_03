@@ -10,8 +10,9 @@ services:
       - webapp-network
 
   web:
-    context: .
-    dockerfile: Dockerfile
+    build:
+      context: .
+      dockerfile: Dockerfile
     image: api_online
     container_name: api_online
     restart: always
