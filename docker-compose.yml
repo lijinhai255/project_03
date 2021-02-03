@@ -10,7 +10,7 @@ services:
       - webapp-network
 
   web:
-    image: web_test_1
+    image: web_test
     restart: always
     depends_on:
       - database
