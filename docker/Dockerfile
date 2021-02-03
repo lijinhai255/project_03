@@ -12,7 +12,7 @@ COPY . .
 
 # RUN npm install
 # RUN npm run build
-RUN mv /app/dist ./
+RUN mv ./dist ./
 
 EXPOSE 8082
 
