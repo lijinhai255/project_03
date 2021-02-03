@@ -10,7 +10,7 @@ services:
       - webapp-network
 
   web:
-    image: yhlben/cdfang-spider
+    image: ts_web
     restart: always
     depends_on:
       - database

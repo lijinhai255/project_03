@@ -73,7 +73,6 @@ const Home: React.FunctionComponent<RouteComponentProps> = () => {
   return (
     <Content className="content">
       <div>这是首页</div>
-     
     </Content>
   );
 };
