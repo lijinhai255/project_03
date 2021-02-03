@@ -7,14 +7,13 @@ RUN rm -rf /app
 RUN mkdir /app
 
 WORKDIR /app
-RUN pwd 
+
 COPY . /app
 
 # RUN npm install
 # RUN npm run build
-RUN pwd 
 RUN mv ./dist/* ./
 
-EXPOSE 8082
+EXPOSE 8181
 
 CMD BUILD_ENV=docker node app.js
