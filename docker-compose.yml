@@ -12,6 +12,9 @@ services:
   web:
     context: .
     dockerfile: Dockerfile
+    image: api_online
+    container_name: api_online
+    restart: always
     depends_on:
       - database
     ports:
