@@ -10,10 +10,10 @@ WORKDIR /app
 
 COPY . /app
 
-# RUN npm install
-# RUN npm run build
+RUN npm install
+RUN npm run build
 RUN mv ./dist/* ./
 
-EXPOSE 8181
+EXPOSE 8082
 
 CMD BUILD_ENV=docker node app.js
