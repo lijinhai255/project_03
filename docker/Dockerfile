@@ -7,11 +7,12 @@ RUN rm -rf /app
 RUN mkdir /app
 
 WORKDIR /app
-
+RUN pwd 
 COPY . /app
 
 # RUN npm install
 # RUN npm run build
+RUN pwd 
 RUN mv ./dist/* ./
 
 EXPOSE 8082
