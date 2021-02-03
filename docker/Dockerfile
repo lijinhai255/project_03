@@ -10,8 +10,8 @@ WORKDIR /app
 
 COPY . /app
 
-RUN npm install
-RUN npm run build
+# RUN npm install
+# RUN npm run build
 RUN mv ./dist/* ./
 
 EXPOSE 8082
