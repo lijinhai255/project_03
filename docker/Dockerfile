@@ -8,11 +8,11 @@ RUN mkdir /app
 
 WORKDIR /app
 
-COPY . .
+COPY . /app
 
 # RUN npm install
 # RUN npm run build
-RUN mv ./dist ./
+RUN mv ./dist/* ./
 
 EXPOSE 8082
 
